@@ -1,0 +1,451 @@
+// Подключение шрифтов
+
+// Файл обнуляющих стилей
+@import "_nullstyle";
+
+// ПЕРЕМЕННЫЕ
+// $fontfamily: "PT Sans";
+// $minwidth: 320px;
+// $mw: 880;
+// $md1: $mw + 12;
+// // $md2: 992.98;
+// $md2: 767.98;
+// $md3: 767.98;
+// $md4: 479.98;
+
+// Шаблоны
+%for_el_content {
+	padding: 50px 0px;
+}
+
+// Миксины
+@mixin marg_bot($bot) {
+	margin: 0px 0px $bot 0px;
+}
+
+body {
+	// font-family: $fontfamily;
+	height: 100%;
+	line-height: 1;
+	font-size: 23px;
+	font-weight: 400;
+	color: #f7f7f7;
+	font-family: "Open Sans";
+	// font-family: Roboto;
+	background: #cccccc;
+
+	&._lock {
+		overflow: hidden; //! добавляем класс "_lock" в JS для запрета прокрутки при активном меню-бургере
+	}
+}
+// ОБОЛОЧКА
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+// ОСНОВНАЯ СЕТКА
+._container {
+	// max-width: $mw + px;
+	max-width: 1200px;
+	padding: 0px 15px; //! это отступы безопасности
+	margin: 0px auto; //! позволяет контейнеру выстроиться посередине
+	box-sizing: content-box;
+	//! Переключили контейнер с border-box на content-box после добавления паддинга, чтобы паддинг не считался частью max-width
+}
+
+._ibg {
+	position: relative;
+
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		@media (max-width: 479px) {
+			//! убираем режим cover, т.к. нам теперь просто нужен кусок картинки без подстройки под размер
+			//! это будет кусок травы СЛЕВА, т.к. ниже стоит "object-position: left;"
+			object-fit: none;
+		}
+	}
+}
+//================================================================================================
+
+// Подключение header
+@import "_header";
+
+//================================================================================================
+
+// ОСНОВНОЙ БЛОК: CONTENT
+
+//================================================================================================
+
+.page {
+	flex: 1 1 auto;
+}
+
+.page__main-block {
+}
+
+.page__articles {
+}
+
+.page__subscribe {
+}
+
+//===== main-block ===============================================================================
+
+.main-block {
+	position: relative; //! для абсолютной картинки-фона main-block__background
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-block__container {
+}
+
+.main-block__body {
+	padding: 199px 0px 279px 0px;
+	max-width: 290px; //! так как у этого блока своя ширина, более узкая, чем у основного контейнера
+
+	position: relative; //! без этого не работает z-index, который нам нужен, чтобы расположиться сверху картинки-бэкграунда
+	z-index: 5;
+
+	@media (max-width: 767px) {
+		padding: 149px 0px 121px 0px;
+	}
+}
+
+.main-block__title {
+	font-size: 48px;
+	line-height: calc(72 / 48 * 100%);
+	letter-spacing: 2px;
+	color: #cd6326;
+
+	margin-bottom: 51px;
+
+	@media (max-width: 767px) {
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7); //! добавляю тень из-за лисы на фоне
+	}
+
+	// @media (max-width: 767px) {
+	// color: lighten(#8f5613, 30%); //! меняю цвет из-за лисы на фоне
+	// color: #e39128;
+	// color: #8f5613;
+	// }
+
+	// @media (max-width: 480px) {
+	// 	color: #cd6326; //! возвращаю изначальный цвет, т.к. убрали лису
+	// }
+}
+
+.main-block__text {
+	font-size: 18px;
+	line-height: calc(27 / 18 * 100%);
+
+	margin-bottom: 49px;
+
+	@media (max-width: 767px) {
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7); //! добавляю тень из-за лисы на фоне
+	}
+}
+
+.main-block__wrap-button {
+}
+
+.main-block__button {
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 5px 42px; //! 5px- отступы безопасности
+
+	font-size: 23px;
+	line-height: calc(27 / 23 * 100%);
+	background-color: #cd6326;
+	// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	color: inherit;
+
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		background-color: #e39128;
+	}
+
+	&:active {
+		background: #8f5613;
+	}
+}
+
+.main-block__background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	// object-fit: cover;  //! пишется только в самом _ibg img
+
+	img {
+		@media (max-width: 479px) {
+			object-position: left;
+			// opacity: 0.8;
+		}
+	}
+}
+
+//======== articles =============================================================================
+
+.articles {
+	background: #cccccc;
+}
+
+.articles__container {
+}
+
+.articles__body {
+	padding: 116px 0px 239px 0px;
+
+	@media (max-width: 767px) {
+		padding: 80px 0px 160px 0px;
+	}
+}
+
+.articles__title {
+	font-size: 48px;
+	line-height: calc(72 / 48 * 100%);
+	text-align: center;
+	color: #333333;
+
+	margin-bottom: 20px;
+}
+
+.articles__subtitle {
+	font-size: 24px;
+	line-height: calc(36 / 24 * 100%);
+	text-align: center;
+	color: #666666;
+
+	margin-bottom: 120px;
+
+	@media (max-width: 1023px) {
+		margin-bottom: 80px;
+	}
+}
+
+.articles__row {
+	display: flex;
+
+	// @media (max-width: 767px) {
+	// 	//!  МЕНЯЮ РАСПОЛОЖЕНИЕ СТАТЕЙ НА ВЕРТИКАЛЬНОЕ
+	// 	flex-direction: column;
+	// }
+}
+.articles__icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	//! применила bfc - центрирование кнопки
+
+	cursor: pointer;
+}
+
+.articles__icon_left {
+	// padding-right: 60px;
+}
+
+.articles__icon_right {
+	padding-left: 60px;
+
+	@media (max-width: 767px) {
+		padding-left: 30px;
+	}
+}
+
+.articles__gallery {
+	flex: 1 1 auto;
+
+	//! ниже запись для того, чтобы не было видно другие статьи-картинки списка
+	// width: 1080px;  //! прописала в JS, чтобы подстраивалась под изменение ширины колонки-статьи
+	overflow: hidden;
+}
+
+.articles__list {
+	display: flex;
+
+	transition: all 0.8s ease 0s;
+
+	transform: translateX(0px);
+
+	// & li {
+	// 	list-style: none; //! чтобы обнулить оформление пунктов списка
+	// }
+	//! закомментировала, т.к. у меня это есть в обнуляющем файле
+
+	// @media (max-width: 767px) {
+	// 	//!  МЕНЯЮ РАСПОЛОЖЕНИЕ СТАТЕЙ НА ВЕРТИКАЛЬНОЕ
+	// 	flex-direction: column;
+	// }
+}
+
+.articles__column {
+	display: block; //! нужно, т.к. это li
+	flex: 0 0 33.333%; //! запретила колонкам уменьшаться, т.к. нам нужно СТРОГО ТРИ статьи на странице
+	//! остальные должны быть спрятаны (сделала фикс.ширину и "overflow: hidden;" в "articles__gallery")
+	padding-left: 60px;
+
+	@media (max-width: 1023px) {
+		flex: 0 0 50%;
+	}
+
+	@media (max-width: 767px) {
+		padding-left: 30px;
+	}
+
+	@media (max-width: 479px) {
+		flex: 0 0 100%;
+	}
+}
+
+.articles__item {
+}
+
+.item-article {
+}
+
+.item-article__body {
+}
+
+.item-article__link-image {
+	display: block; //! т.к. это <a>, нужно блочить
+	cursor: pointer; //! эти картинки сделаны ссылками, поэтому сделала так, чтобы появлялась рука при наведении
+
+	padding: 0px 0px 120% 0px; //! это нужно, чтобы была видна картинка, т.к. она у нас абсолютная
+	//! высоту картинки делить на ширину: 360/300*100 = 120
+
+	& img {
+		display: block; //! типа убирает «хвосты» символов - https://learn.javascript.ru/introduction-browser-events
+	}
+}
+
+.item-article__words {
+	position: relative;
+	z-index: 2;
+	margin: -113px 0px 0px 0px;
+
+	cursor: pointer;
+	padding: 0px 5px; //! отступы безопасности - вдруг будет больше текста
+	padding-bottom: 40px;
+	//!  нужен паддинг от надписи, т.к. картинка абсолютная и не влияет на размер body, а надпись влияет
+	//!  если не сделать этот паддинг, то при "overflow: hidden;" картинка режется снизу!!!
+
+	@media (max-width: 767px) {
+		margin: 0px 0px 0px 0px;
+		color: #666666; //! меняю цвет букв, т.к. теперь буквы будут ПОД картинкой
+	}
+}
+
+.item-article__title {
+	font-size: 22px;
+	line-height: calc(36 / 22 * 100%);
+	text-align: center;
+
+	padding-bottom: 10px;
+
+	@media (max-width: 767px) {
+		padding-bottom: 5px;
+	}
+}
+
+.item-article__subtitle {
+	font-size: 17px;
+	line-height: calc(27 / 17 * 100%);
+	text-align: center;
+}
+
+//==== subscribe ================================================================================
+
+.subscribe {
+}
+
+.subscribe__container {
+}
+
+.subscribe__body {
+	padding: 0px 0px 239px 0px;
+
+	@media (max-width: 767px) {
+		padding: 0px 0px 160px 0px;
+	}
+}
+
+.subscribe__title {
+	font-size: 27px;
+	line-height: calc(40 / 27 * 100%);
+	text-align: center;
+	color: #333333;
+
+	margin-bottom: 59px;
+}
+
+.subscribe__form {
+	display: flex;
+	justify-content: center;
+}
+
+.subscribe__input {
+	flex: 1 1 auto;
+	width: 100%; //! чтобы поле адаптировалось. Иначе при самом маленьком экране немного не влезает
+
+	font-family: Roboto;
+	font-size: 23px;
+	line-height: calc(27 / 23 * 100%);
+	color: #666666;
+
+	border: 1px solid #666666;
+	border-right: none;
+	background-color: #cccccc;
+
+	padding: 5px 15px 5px 15px;
+	max-width: 536px;
+}
+
+.subscribe__button {
+	font-family: Roboto;
+	font-size: 23px;
+	line-height: calc(27 / 23 * 100%);
+	color: inherit;
+
+	background: #cd6326;
+	//! в макете бордер прописан в inspect, но указано, что при ховере и эктиве его не д.б. => зачем он нужен?
+	// border: 1px solid #cd6326;
+	border-radius: 0px 5px 5px 0px;
+
+	padding: 5px; //! 5px - отступы безопасности
+	min-width: 120px;
+
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		background-color: #e39128;
+	}
+
+	&:active {
+		background: #8f5613;
+	}
+}
+
+//================================================================================================
+
+// Подключение footer
+@import "_footer";
