@@ -4,10 +4,6 @@
     top: 0;
     left: 0;
     z-index: 10;
-
-    @media (max-width: 767px) {
-        // position: fixed;  //! не знаю, зачем Жека ставил тут fixed - так шапка крутится вместе со страницей!
-    }
 }
 
 .header__container {
@@ -18,8 +14,7 @@
     justify-content: space-between;
     align-items: center;
 
-    // padding: 19px 0px;
-    min-height: 98px; //! 60 контент + 19 сверху + 19 снизу  // Так делает Жека вместо паддингов: флекс, центрирование, мин-хайт
+    min-height: 98px; //! 60 контент + 19 сверху + 19 снизу
 }
 
 .header__logo {
@@ -29,15 +24,13 @@
 .logo {
     font-family: Roboto;
     font-size: 32px;
-    // line-height: calc(60 / 32 * 100%);
-    line-height: 60px; //! т.к. высота всегда будет 60px, поэтому для центрирования lh тоже всегда д.б. 60px
+    line-height: 60px;
     text-transform: uppercase;
     color: inherit;
 
     background-image: url(/img/header/header_logo.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
-    // не забыть задать высоту иконке
     min-height: 60px;
     padding-left: 85px;
 
@@ -162,8 +155,7 @@
 .menu__list {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; //! нужно делать для надёжности! вдруг заказчик добавит пункты потом
-    //! и благодаря лайн-хайту пункты при врапе не слипнутся
+    flex-wrap: wrap;
 
     @media (max-width: 767px) {
         display: block;
@@ -241,8 +233,6 @@
     color: inherit;
 }
 .menu__link_search {
-    //! нужно вешать флекс на пункт меню, а не на эту ссылку!
-    //! прикрепить иконку бэкграундом не получилось, не могу её нормально центровать для бургера
 }
 
 .menu__link_button {

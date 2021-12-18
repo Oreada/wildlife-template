@@ -1,19 +1,19 @@
 .footer {
-    position: relative; //! для абсолютной картинки-фона footer__background
+    position: relative;
 }
 
 .footer__container {
 }
 
 .footer__row {
-    position: relative; //! без этого не работает z-index, который нам нужен, чтобы расположиться сверху картинки-бэкграунда
+    position: relative;
     z-index: 5;
 
     display: flex;
-    justify-content: space-between; //! т.к. между тремя элементами флекс-контейнера (лого, меню, социал) одинаковое расстояние
+    justify-content: space-between;
     align-items: center;
 
-    min-height: 359px; //! Так делает Жека вместо паддингов: флекс, центрирование, мин-хайт
+    min-height: 359px;
 
     @media (max-width: 1023px) {
         flex-wrap: wrap;
@@ -31,7 +31,7 @@
     }
 }
 .footer__logo {
-    display: block; //! т.к. это <a>, нужно блочить
+    display: block;
 }
 
 .footer__menu {
@@ -49,8 +49,7 @@
 .menu-footer__list {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; //! нужно делать для надёжности! вдруг заказчик добавит пункты потом
-    //! и благодаря лайн-хайту пункты при врапе не слипнутся
+    flex-wrap: wrap;
 }
 
 .menu-footer__item {
@@ -119,42 +118,4 @@
     height: 100%;
     top: 0;
     left: 0;
-    // object-fit: cover;  //! пишется только в самом _ibg img
 }
-
-/*
-    ! ВАЖНО: делать эту запись НЕ внутри ограничивающего контейнера
-	<div class="footer__background _ibg-footer">
-		<img src="/img/footer/footer_background.jpg" alt="background">
-	</div>
-
-!!! Для того чтобы сделать картинку фоном нужно:
-
-* В классе того блока, на который хотим растянуть картинку, в данном случае - footer, написать:
-    position: relative;
-
-* В классе обёртки для картинки-бэкграунда, в данном случае - footer__background, написать:
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-* Задать обёртке для картинки-бэкграунда ещё и класс _ibg (тут _ibg-footer) и написать в него:
-    ._ibg-footer {
-        position: relative;
-
-        img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            object-fit: cover;
-        }
-    }
-
-* В тот body, который мы хотим расположить сверху картинки-бэкграунда, в данном случае footer__row, написать:
-    position: relative; //! без этого не работает z-index, который нам нужен, чтобы расположиться сверху картинки-бэкграунда
-	z-index: 5;
-*/
