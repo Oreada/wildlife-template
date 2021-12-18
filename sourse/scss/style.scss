@@ -1,30 +1,7 @@
-// Подключение шрифтов
-
 // Файл обнуляющих стилей
 @import "_nullstyle";
 
-// ПЕРЕМЕННЫЕ
-// $fontfamily: "PT Sans";
-// $minwidth: 320px;
-// $mw: 880;
-// $md1: $mw + 12;
-// // $md2: 992.98;
-// $md2: 767.98;
-// $md3: 767.98;
-// $md4: 479.98;
-
-// Шаблоны
-%for_el_content {
-	padding: 50px 0px;
-}
-
-// Миксины
-@mixin marg_bot($bot) {
-	margin: 0px 0px $bot 0px;
-}
-
 body {
-	// font-family: $fontfamily;
 	height: 100%;
 	line-height: 1;
 	font-size: 23px;
@@ -48,9 +25,8 @@ body {
 }
 // ОСНОВНАЯ СЕТКА
 ._container {
-	// max-width: $mw + px;
 	max-width: 1200px;
-	padding: 0px 15px; //! это отступы безопасности
+	padding: 0px 15px; //! отступы безопасности
 	margin: 0px auto; //! позволяет контейнеру выстроиться посередине
 	box-sizing: content-box;
 	//! Переключили контейнер с border-box на content-box после добавления паддинга, чтобы паддинг не считался частью max-width
@@ -109,9 +85,9 @@ body {
 
 .main-block__body {
 	padding: 199px 0px 279px 0px;
-	max-width: 290px; //! так как у этого блока своя ширина, более узкая, чем у основного контейнера
+	max-width: 290px;
 
-	position: relative; //! без этого не работает z-index, который нам нужен, чтобы расположиться сверху картинки-бэкграунда
+	position: relative;
 	z-index: 5;
 
 	@media (max-width: 767px) {
@@ -130,16 +106,6 @@ body {
 	@media (max-width: 767px) {
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7); //! добавляю тень из-за лисы на фоне
 	}
-
-	// @media (max-width: 767px) {
-	// color: lighten(#8f5613, 30%); //! меняю цвет из-за лисы на фоне
-	// color: #e39128;
-	// color: #8f5613;
-	// }
-
-	// @media (max-width: 480px) {
-	// 	color: #cd6326; //! возвращаю изначальный цвет, т.к. убрали лису
-	// }
 }
 
 .main-block__text {
@@ -162,12 +128,11 @@ body {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	padding: 5px 42px; //! 5px- отступы безопасности
+	padding: 5px 42px; //! 5px - отступы безопасности
 
 	font-size: 23px;
 	line-height: calc(27 / 23 * 100%);
 	background-color: #cd6326;
-	// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 	color: inherit;
 
@@ -188,12 +153,10 @@ body {
 	height: 100%;
 	top: 0;
 	left: 0;
-	// object-fit: cover;  //! пишется только в самом _ibg img
 
 	img {
 		@media (max-width: 479px) {
 			object-position: left;
-			// opacity: 0.8;
 		}
 	}
 }
@@ -239,23 +202,17 @@ body {
 
 .articles__row {
 	display: flex;
-
-	// @media (max-width: 767px) {
-	// 	//!  МЕНЯЮ РАСПОЛОЖЕНИЕ СТАТЕЙ НА ВЕРТИКАЛЬНОЕ
-	// 	flex-direction: column;
-	// }
 }
+
 .articles__icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	//! применила bfc - центрирование кнопки
 
 	cursor: pointer;
 }
 
 .articles__icon_left {
-	// padding-right: 60px;
 }
 
 .articles__icon_right {
@@ -280,21 +237,11 @@ body {
 	transition: all 0.8s ease 0s;
 
 	transform: translateX(0px);
-
-	// & li {
-	// 	list-style: none; //! чтобы обнулить оформление пунктов списка
-	// }
-	//! закомментировала, т.к. у меня это есть в обнуляющем файле
-
-	// @media (max-width: 767px) {
-	// 	//!  МЕНЯЮ РАСПОЛОЖЕНИЕ СТАТЕЙ НА ВЕРТИКАЛЬНОЕ
-	// 	flex-direction: column;
-	// }
 }
 
 .articles__column {
-	display: block; //! нужно, т.к. это li
-	flex: 0 0 33.333%; //! запретила колонкам уменьшаться, т.к. нам нужно СТРОГО ТРИ статьи на странице
+	display: block;
+	flex: 0 0 33.333%;
 	//! остальные должны быть спрятаны (сделала фикс.ширину и "overflow: hidden;" в "articles__gallery")
 	padding-left: 60px;
 
@@ -321,14 +268,14 @@ body {
 }
 
 .item-article__link-image {
-	display: block; //! т.к. это <a>, нужно блочить
-	cursor: pointer; //! эти картинки сделаны ссылками, поэтому сделала так, чтобы появлялась рука при наведении
+	display: block;
+	cursor: pointer;
 
 	padding: 0px 0px 120% 0px; //! это нужно, чтобы была видна картинка, т.к. она у нас абсолютная
 	//! высоту картинки делить на ширину: 360/300*100 = 120
 
 	& img {
-		display: block; //! типа убирает «хвосты» символов - https://learn.javascript.ru/introduction-browser-events
+		display: block;
 	}
 }
 
@@ -340,8 +287,7 @@ body {
 	cursor: pointer;
 	padding: 0px 5px; //! отступы безопасности - вдруг будет больше текста
 	padding-bottom: 40px;
-	//!  нужен паддинг от надписи, т.к. картинка абсолютная и не влияет на размер body, а надпись влияет
-	//!  если не сделать этот паддинг, то при "overflow: hidden;" картинка режется снизу!!!
+	//!  нужен паддинг от надписи, чтобы увеличить размер body (картинка абсолютная => на размер body не влияет)
 
 	@media (max-width: 767px) {
 		margin: 0px 0px 0px 0px;
@@ -399,7 +345,7 @@ body {
 
 .subscribe__input {
 	flex: 1 1 auto;
-	width: 100%; //! чтобы поле адаптировалось. Иначе при самом маленьком экране немного не влезает
+	width: 100%;
 
 	font-family: Roboto;
 	font-size: 23px;

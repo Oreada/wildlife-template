@@ -1,28 +1,35 @@
-@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-:focus, :active {
+:focus,
+:active {
   outline: none;
 }
 
-a:focus, a:active {
+a:focus,
+a:active {
   outline: none;
 }
 
-nav, footer, header, aside {
+nav,
+footer,
+header,
+aside {
   display: block;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -33,7 +40,9 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font-family: inherit;
 }
 
@@ -50,7 +59,8 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
 }
 
@@ -66,7 +76,12 @@ img {
   vertical-align: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -95,8 +110,8 @@ body._lock {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 ._container {
@@ -104,7 +119,7 @@ body._lock {
   padding: 0px 15px;
   margin: 0px auto;
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 ._ibg {
@@ -118,13 +133,13 @@ body._lock {
   top: 0;
   left: 0;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media (max-width: 479px) {
   ._ibg img {
     -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 }
 
@@ -141,11 +156,11 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-height: 98px;
 }
 
@@ -189,13 +204,15 @@ body._lock {
 }
 
 @media (max-width: 767px) {
-  .menu__icon::before, .menu__icon::after {
+  .menu__icon::before,
+  .menu__icon::after {
     content: "";
   }
 }
 
 @media (max-width: 767px) {
-  .menu__icon::before, .menu__icon::after,
+  .menu__icon::before,
+  .menu__icon::after,
   .menu__icon span {
     left: 0px;
     position: absolute;
@@ -223,25 +240,25 @@ body._lock {
   .menu__icon span {
     top: 50%;
     -webkit-transform: scale(1) translate(0px, -50%);
-            transform: scale(1) translate(0px, -50%);
+    transform: scale(1) translate(0px, -50%);
   }
 }
 
 .menu__icon._active span {
   -webkit-transform: scale(0) translate(0px, -50%);
-          transform: scale(0) translate(0px, -50%);
+  transform: scale(0) translate(0px, -50%);
 }
 
 .menu__icon._active::before {
   top: 50%;
   -webkit-transform: rotate(-45deg) translate(0px, -50%);
-          transform: rotate(-45deg) translate(0px, -50%);
+  transform: rotate(-45deg) translate(0px, -50%);
 }
 
 .menu__icon._active::after {
   bottom: 50%;
   -webkit-transform: rotate(45deg) translate(0px, 50%);
-          transform: rotate(45deg) translate(0px, 50%);
+  transform: rotate(45deg) translate(0px, 50%);
 }
 
 @media (max-width: 767px) {
@@ -279,10 +296,10 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 767px) {
@@ -316,11 +333,11 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   min-height: 60px;
   cursor: pointer;
 }
@@ -328,8 +345,8 @@ body._lock {
 @media (max-width: 767px) {
   .menu__item_search {
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    -ms-flex-pack: start;
+    justify-content: start;
   }
 }
 
@@ -339,11 +356,11 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: center;
   border-radius: 5px;
   padding: 3px 23px;
@@ -372,8 +389,8 @@ body._lock {
 @media (max-width: 767px) {
   .menu__item_button {
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    -ms-flex-pack: start;
+    justify-content: start;
     border: "";
     border-radius: "";
     padding: 0px;
@@ -387,14 +404,14 @@ body._lock {
 
 .page {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .main-block {
   position: relative;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .main-block__body {
@@ -442,11 +459,11 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: center;
   padding: 5px 42px;
   font-size: 23px;
@@ -477,7 +494,7 @@ body._lock {
 @media (max-width: 479px) {
   .main-block__background img {
     -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 }
 
@@ -528,11 +545,11 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -548,8 +565,8 @@ body._lock {
 
 .articles__gallery {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   overflow: hidden;
 }
 
@@ -560,22 +577,22 @@ body._lock {
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
   -webkit-transform: translateX(0px);
-          transform: translateX(0px);
+  transform: translateX(0px);
 }
 
 .articles__column {
   display: block;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 33.333%;
-          flex: 0 0 33.333%;
+  -ms-flex: 0 0 33.333%;
+  flex: 0 0 33.333%;
   padding-left: 60px;
 }
 
 @media (max-width: 1023px) {
   .articles__column {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 50%;
-            flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
   }
 }
 
@@ -588,8 +605,8 @@ body._lock {
 @media (max-width: 479px) {
   .articles__column {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
   }
 }
 
@@ -661,14 +678,14 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .subscribe__input {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   width: 100%;
   font-family: Roboto;
   font-size: 23px;
@@ -695,11 +712,11 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: center;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -724,40 +741,40 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-height: 359px;
 }
 
 @media (max-width: 1023px) {
   .footer__row {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 1023px) {
   .footer__wrap-logo {
     -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+    -ms-flex-order: 1;
+    order: 1;
   }
 }
 
 @media (max-width: 600px) {
   .footer__wrap-logo {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -768,17 +785,17 @@ body._lock {
 @media (max-width: 1023px) {
   .footer__menu {
     -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
+    -ms-flex-order: 3;
+    order: 3;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -787,10 +804,10 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .menu-footer__item:not(:last-child) {
@@ -812,22 +829,22 @@ body._lock {
 @media (max-width: 1023px) {
   .footer__social {
     -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    -ms-flex-order: 2;
+    order: 2;
   }
 }
 
 @media (max-width: 600px) {
   .footer__social {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -836,8 +853,8 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .social__icon-link {
@@ -859,7 +876,7 @@ body._lock {
   top: 0;
   left: 0;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .footer__background {
@@ -869,40 +886,3 @@ body._lock {
   top: 0;
   left: 0;
 }
-
-/*
-    ! ВАЖНО: делать эту запись НЕ внутри ограничивающего контейнера
-	<div class="footer__background _ibg-footer">
-		<img src="/img/footer/footer_background.jpg" alt="background">
-	</div>
-
-!!! Для того чтобы сделать картинку фоном нужно:
-
-* В классе того блока, на который хотим растянуть картинку, в данном случае - footer, написать:
-    position: relative;
-
-* В классе обёртки для картинки-бэкграунда, в данном случае - footer__background, написать:
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-* Задать обёртке для картинки-бэкграунда ещё и класс _ibg (тут _ibg-footer) и написать в него:
-    ._ibg-footer {
-        position: relative;
-
-        img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            object-fit: cover;
-        }
-    }
-
-* В тот body, который мы хотим расположить сверху картинки-бэкграунда, в данном случае footer__row, написать:
-    position: relative; //! без этого не работает z-index, который нам нужен, чтобы расположиться сверху картинки-бэкграунда
-	z-index: 5;
-*/
